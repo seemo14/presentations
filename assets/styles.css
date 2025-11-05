@@ -1,0 +1,314 @@
+:root {
+    color-scheme: light;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f5f7fb;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.card-subtitle {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-top: 0.35rem;
+}
+
+.section-heading {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.6rem;
+}
+
+.input {
+    width: 100%;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    background: #ffffff;
+}
+
+.input:focus {
+    outline: none;
+    border-color: rgba(37, 99, 235, 0.6);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.grade-tab,
+.group-tab {
+    padding: 0.65rem 1.1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    background: #ffffff;
+    color: #1e293b;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+}
+
+.grade-tab:hover,
+.group-tab:hover {
+    border-color: rgba(59, 130, 246, 0.6);
+    color: #1d4ed8;
+}
+
+.tab-active {
+    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+}
+
+.tab-inactive {
+    background: white;
+    color: #1f2937;
+}
+
+.accent-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: 0.85rem;
+    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+    color: white;
+    font-weight: 600;
+    padding: 0.85rem 1.2rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.25);
+}
+
+.accent-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 40px rgba(14, 165, 233, 0.25);
+}
+
+.accent-outline-button {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.35rem;
+    border-radius: 0.85rem;
+    border: 2px dashed rgba(59, 130, 246, 0.35);
+    background: rgba(37, 99, 235, 0.08);
+    color: #1d4ed8;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    cursor: pointer;
+}
+
+.accent-outline-button:hover {
+    border-color: rgba(14, 165, 233, 0.6);
+    background: rgba(14, 165, 233, 0.12);
+}
+
+.ghost-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    border-radius: 0.85rem;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    padding: 0.75rem 1.1rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1f2937;
+    background: rgba(148, 163, 184, 0.1);
+    transition: all 0.2s ease;
+}
+
+.ghost-button:hover {
+    border-color: rgba(59, 130, 246, 0.6);
+    color: #1d4ed8;
+}
+
+.data-table,
+.gradebook-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 720px;
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.data-table th,
+.data-table td,
+.gradebook-table th,
+.gradebook-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.data-table th,
+.gradebook-table th {
+    background: rgba(241, 245, 249, 0.9);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: #334155;
+}
+
+.gradebook-table th span {
+    font-weight: 500;
+    display: block;
+    font-size: 0.7rem;
+    color: rgba(51, 65, 85, 0.7);
+}
+
+.gradebook-table tbody tr:hover td {
+    background: rgba(59, 130, 246, 0.06);
+}
+
+.sticky-col {
+    position: sticky;
+    left: 0;
+    background: white;
+    z-index: 10;
+    box-shadow: inset -1px 0 0 rgba(148, 163, 184, 0.2);
+}
+
+.placeholder {
+    text-align: center;
+    padding: 2rem 0;
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.mark-input {
+    width: 100%;
+    min-width: 70px;
+    text-align: center;
+    border-radius: 0.65rem;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    padding: 0.55rem 0.6rem;
+    font-weight: 600;
+    color: #1f2937;
+    transition: box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.mark-input:focus {
+    outline: none;
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.obs-input {
+    width: 100%;
+    min-width: 180px;
+    border-radius: 0.65rem;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    padding: 0.55rem 0.75rem;
+    transition: box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.obs-input:focus {
+    outline: none;
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.final-score-cell {
+    text-align: center;
+    font-weight: 700;
+    color: #1d4ed8;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.4);
+    padding: 1.5rem;
+    z-index: 50;
+}
+
+.modal-content {
+    width: min(90vw, 420px);
+    background: white;
+    border-radius: 1.2rem;
+    padding: 2rem;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.3);
+}
+
+.modal-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.modal-message {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.animate-progress {
+    width: 35%;
+    animation: progress 1.2s ease-in-out infinite;
+}
+
+@keyframes progress {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(40%);
+    }
+    100% {
+        transform: translateX(160%);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .gradebook-table,
+    .data-table {
+        font-size: 0.85rem;
+    }
+
+    .card {
+        padding: 1.4rem;
+    }
+}
