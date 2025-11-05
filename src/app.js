@@ -42,7 +42,26 @@ const state = {
     pdfExtractedStudents: []
 };
 
-const firebaseConfig = JSON.parse(typeof window.__firebase_config !== "undefined" ? window.__firebase_config : "{}");
+const rawFirebaseConfig = typeof window !== "undefined" && typeof window.__firebase_config !== "undefined"
+    ? window.__firebase_config
+    : "{}";
+
+let firebaseConfig = {};
+if (typeof rawFirebaseConfig === "string") {
+    try {
+        firebaseConfig = rawFirebaseConfig ? JSON.parse(rawFirebaseConfig) : {};
+    } catch (error) {
+        console.error("Failed to parse Firebase config string, falling back to empty object", error);
+        firebaseConfig = {};
+    }
+} else if (rawFirebaseConfig && typeof rawFirebaseConfig === "object") {
+    firebaseConfig = rawFirebaseConfig;
+}
+
+if (!firebaseConfig || typeof firebaseConfig !== "object") {
+    firebaseConfig = {};
+}
+
 const appId = typeof window.__app_id !== "undefined" ? window.__app_id : "middle-school-console";
 
 // DOM
